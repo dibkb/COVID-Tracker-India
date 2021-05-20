@@ -1,0 +1,70 @@
+.container{
+   font-family: var(--font);
+   font-weight: 400;
+   height: 69vh;
+   max-height: 600px;
+   margin: 5vh 7.291vw 5vh 7.291vw;
+   display: grid;
+   grid-template-columns: minmax(0, 1fr);
+   grid-template-rows: 2fr 2fr 1.5fr auto;
+   grid-template-areas: 
+   "error_result"
+   "search_bar"
+   "all_district_container" ;
+}
+.dist_btn{
+   margin-top: 1em;
+   background-color: white;
+   color: #000;
+   /* animation */
+   animation-name: img_load;
+   animation-duration: 1.2s;
+   animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+   animation-delay: 5s;
+   animation-fill-mode: forwards;
+   opacity: 0; 
+
+}
+.dist_btn:hover{
+   background-color: #1c1c1c;
+   color: #fff;
+   border: 1.8px solid #fff;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 575.98px){
+   html,body{
+      overflow-x: auto!important;
+   }
+   .container{
+      grid-template-rows: 1.5fr 2fr 1.2fr auto;
+      margin: 3vh 3vw 1vh 3vw;      
+      height: 72vh!important;
+   }
+   .search_bar{
+      max-width: 100%!important;
+   }
+   .error_heading {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .error_heading .blink:nth-child(2){
+      display: none;
+   }
+   .error_heading >*{
+      margin-bottom: 9px;
+   }
+
+}

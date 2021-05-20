@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+   <link rel="stylesheet" href="/static/styles/ERROR.css">
+   <link rel="stylesheet" href="/static/styles/errorState.css">
+
+   <title>No state named "{{ state }}" found </title>
+</head>
+<body>
+   <div class="container">
+      <div class="error_result">
+         <div class="error_heading">
+            <span class="blink"><i class="fas fa-exclamation-triangle"></i></span>
+            Looks like there is a typographical error here.
+            <span class="blink"><i class="fas fa-exclamation-triangle"></i></span>
+         </div>
+         <div class="error_subheading">No state named <span class="city_name">"{{ state }}"</span> found.</div>
+      </div>
+      <form class="search_bar" method="POST">
+         <!-- Wrap both input and submit button with a div, set to position: relative.
+         Input field width: 100%.
+         Button position: absolute, position: top right. Set width, height. Add background image. Set z-index to more than 1. -->
+
+            <input type="text" class="search_input" placeholder="Enter state name" name="state">
+         <button class="btn_search" type="submit">GO</button>
+      </form>
+
+      <div class="all_district_container">
+         <a href="{{ url_for('states')}}" class="all_district_btn">View all States</a>         
+         <a href="{{ url_for('search')}}" class="all_district_btn dist_btn">Search District</a>
+      </div>
+   </div>
+
+
+
+
+</body>
+</html>

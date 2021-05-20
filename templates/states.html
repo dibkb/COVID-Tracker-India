@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>State / Union Territory Statistics</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="/static/styles/scssStates/style.css">
+	<link rel="stylesheet" href="/static/styles/states.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="text-center mb-5 mt-5">
+					<form class="search_bar" method="POST">
+						<!-- Wrap both input and submit button with a div, set to position: relative.
+						Input field width: 100%.
+						Button position: absolute, position: top right. Set width, height. Add background image. Set z-index to more than 1. -->
+			
+							<input type="text" class="search_input" placeholder="Enter state name" name="state">
+						<button class="btn_search" type="submit">GO</button>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-bordered table-dark table-hover">
+						  <thead>
+						    <tr>
+						      <th>STATE / UNION TERRITORY</th>
+						      <th>CONFIRMED CASES</th>
+						      <th>ACTIVE CASES</th>								
+								<th class="green ">RECOVERED</th>
+								<th class="red">DECEASED</th>									
+								<th>DEATH RATIO</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						{% for state in sd.getFinalStatesData() %}	  
+						    <tr>
+						      <td>{{ state['loc'] }}</td>
+						      <td>{{ state['totalConfirmed'] }}</td>
+						      <td>{{ state['active'] }}</td>			
+						      <td class="green">{{ state['discharged'] }}</td>
+						      <td class="red">{{ state['deaths'] }}</td>
+						      <td>{{ state['deathRatio'] }}%</td>						
+						    </tr>	
+						{% endfor %}	 					 							 			 
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="/static/script/States JS/jquery.min.js"></script>
+  <script src="/static/script/States JS/popper.js"></script>
+  <script src="/static/script/States JS/bootstrap.min.js"></script>
+  <script src="/static/script/States JS/main.js"></script>
+
+	</body>
+</html>
+

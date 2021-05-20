@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/static/styles/main.css">
+   <title>Stay Home | Stay Safe</title>
+</head>
+<body>
+   <div class="container">
+      <div class="heading">
+         <h1>Home</h1>
+         <h2>Stay</h2>
+      </div>
+      <div class="info">
+         <p>Morbi purus sit mi libero. Sapien sagittis diam nisl augue egestas consequat, facilisis lorem nulla. Mauris malesuada in ornare commodo blandit ipsum morbi scelerisque.</p>
+         <div class="btn_row">
+            <a href="{{ url_for('states') }}" class="search_state"><button class="">Search State</button></a>
+            <a href="{{ url_for('search') }}"  class="search_district"><button class="">Search District</button></a>  
+         </div>
+      </div>   
+      <img src="/static/images/wear_mask.png" alt="" class="image_container">
+      <div class="govt_helpline">
+         <a class="pm_cares" href="https://www.pmcares.gov.in/en/" >Dontate to PM Cares Fund</a>
+         <div class="helpline_number">Government Helpline Number : <span>+91-11-23978046</span> </div>
+      </div>
+   </div>
+
+   
+</body>
+</html>

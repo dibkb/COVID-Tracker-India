@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>{{ city.title().strip() }} Covid Cases</title>
+   <!-- FONT AWESOME -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+   <link rel="stylesheet" href="/static/styles/result.css">
+</head>
+<body>
+   <div class="container">
+      <div class="search_container">
+         <form class="search_bar" method="POST">
+            <!-- Wrap both input and submit button with a div, set to position: relative.
+            Input field width: 100%.
+            Button position: absolute, position: top right. Set width, height. Add background image. Set z-index to more than 1. -->
+   
+               <input type="text" class="search_input" placeholder="Enter your district" name="city">
+
+            <button class="btn_search" type="submit">GO</button>
+         </form>
+      </div>   
+      <div class="result">
+         <h1 class="district_name">{{ city }}</h1>
+         <li class="confirmed">
+            CONFIRMED CASES : {{ dData.totalDistrictCases() }}</li>
+         <li class="active">
+            ACTIVE CASES : {{ dData.totalDistrictActive() }}</li>
+         <li class="recovered">
+            RECOVERED: {{ dData.totalDistrictrecovered() }}</li>
+         <li class="deceased">
+            DECEASED : {{ dData.totalDistrictDeaths() }}</li>         
+      </div>
+
+      
+      <form class="state_data" method="POST">
+         <a href="{{ url_for('stateDistrict',state = dData.getDistrict()[1]) }}" 
+          >See all districts of {{dData.getDistrict()[1]}}</a>
+      </form>
+
+      <div class="update_time">
+         Last Updated : {{sd.getUpdateTime()}}, {{sd.getUpdateDate()}}
+      </div>
+   </div>
+
+ 
+   
+
+
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">   
+</body>
+</html>

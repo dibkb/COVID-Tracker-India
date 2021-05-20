@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+:root{
+   --font: 'Roboto', sans-serif;
+   --red:#DF4547;
+   --background:#1C1C1C;
+   --light-text-color:rgba(225, 225, 225, 0.84);
+   --font-large:4em;
+}
+
+*,*::after,*::before{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   background-color: var(--background);
+   color: white;
+   font-family: var(--font);
+   font-size: 16px;
+   transition: 0.21s;
+   transition-timing-function: ease-in;
+}
+li,a{
+   text-decoration: none;
+   text-transform: none;
+}
+button{
+   border: none;
+   background-color: transparent;
+}
+html,body{
+   overflow-x: hidden!important;
+   height: 100%;
+}
+
+.container{
+   max-height: 100vh;
+   margin: 6vh 7.291vw 0 7.291vw;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr 1.404fr 0.851068fr;
+   grid-template-areas: 
+   "image_container heading"
+   "image_container info"
+   "govt_helpline govt_helpline"
+   ;
+}
+.heading{
+   margin-top: 3vh;
+   grid-area: heading;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   font-size: var(--font-large);
+
+   /* Animation */
+
+   }
+
+.heading h1{
+   align-self: start;
+   font-size: inherit;
+   font-size: 64px;
+   
+   /* animation */
+
+   opacity: 0;
+   animation-name: header_load;
+   animation-duration: 2.1s;
+   animation-delay: 2.5s;
+   animation-fill-mode: forwards;
+
+}
+.heading h2{
+   align-self: flex-end;
+   font-size: 64px;
+
+   /* animation */
+
+   opacity: 0;
+   animation-name: header_load;
+   animation-duration: 2.1s;
+   animation-delay: 1.8s;
+   animation-fill-mode: forwards;
+}
+.heading h1::before{
+   font-size: 64px;
+   content: "Stay ";
+   color: var(--red);
+}
+.heading h2::after{
+   content: " Safe";
+   color: var(--red);
+   font-size: 64px;
+
+}
+.info{
+   grid-area: info;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   margin-top: 2vh;
+   /* animation */
+
+   animation-name: img_load;
+   animation-duration: 0.9s;
+   animation-timing-function: ease-in;
+   animation-delay: .6s;
+   animation-fill-mode: forwards;
+   opacity: 0;
+}
+.info p{
+   color: var(--light-text-color);
+   line-height: 160.9%;
+}
+.btn_row{
+   display: flex;
+   justify-content: space-between;
+
+   /* Animation */
+   animation-name: img_load;
+   animation-duration: 0.9s;
+   animation-timing-function: ease-in;
+   animation-delay: 1.6s;
+   animation-fill-mode: forwards;
+   opacity: 0;
+}
+.search_state,.search_district{
+   border: 2.1px solid var(--red);
+   padding: 12px 45px;
+   border-radius: 34px;
+}
+.search_state{
+   background-color: var(--red);
+}
+.search_district button{
+   color: var(--red);
+}
+.search_district:hover{
+   cursor: pointer;
+   padding: 12px 64px;
+   background-color: var(--red);
+   color: #fff;
+}
+.search_district:hover button{
+   color: #fff;
+   cursor: pointer;
+
+}
+
+.search_state:hover{
+   cursor: pointer;
+   padding: 12px 64px;
+   background-color: transparent;
+   color: var(--red);
+}
+.search_state:hover button{
+   cursor: pointer;
+   color: var(--red);
+
+}
+
+.image_container{
+   display: block;
+   margin-top: auto;
+   margin-bottom: auto;
+   grid-area: image_container;
+   max-width: 99%;
+   max-height: 99%;
+   /* Animation */
+   animation-name: para_load;
+   animation-duration: 0.81s;
+   animation-timing-function: ease-out;
+   animation-delay: 1.2s;
+   animation-fill-mode: forwards;
+   opacity: 0;
+}
+
+
+.govt_helpline{
+   margin-top: 3vh;
+   height: 100%;
+   grid-area: govt_helpline;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   text-align: center;
+   /* Animation */
+   animation-name: para_load;
+   animation-duration: 1s;
+   animation-timing-function: ease-out;
+   animation-delay: 1.5s;
+   animation-fill-mode: forwards;
+   opacity: 0;
+}
+.pm_cares{
+   align-items: center;
+   border: 2.1px solid #fff;
+   padding: 12px 84px;
+   border-radius: 34px;
+
+   /* Animation */
+
+   animation-name: img_load;
+   animation-duration: 1s;
+   animation-timing-function: ease-out;
+   animation-delay: 1.5s;
+   animation-fill-mode: forwards;
+   opacity: 0; 
+   max-width: 500px;  
+   display: block;
+   margin: auto;
+}
+.pm_cares:hover{
+   background-color: #fff;
+   color: var(--background);
+   font-weight: 500;
+   transition-timing-function: ease;
+   padding: 12px 118px;
+}
+.pm_cares_link:hover{
+   cursor: default;
+}
+
+/* Animation */
+
+@keyframes img_load {
+   from{
+      opacity: 0;
+      transform: translate(690px);
+   }
+   to{
+      opacity: 1;
+   }
+}
+
+@keyframes social_load{
+   from{
+      opacity: 0;
+      transform: translate(-690px);
+   }
+   to{
+   opacity: 1;
+   }
+   
+}
+@keyframes para_load{
+   from{
+      opacity: 0;
+      transform: translate(-380px);
+   }
+   to{
+   opacity: 1;
+   }
+}
+@keyframes header_load{
+   from{
+      opacity: 0;
+      transform: translateY(-380px);
+   }
+   to{
+   opacity: 1;
+   }
+}
+@media (max-width: 950px) {
+   .container{
+      height: auto;
+      margin: 0 6vw 2em 7.291vw;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1.404fr 0.851068fr;
+      grid-template-areas: 
+      "heading"
+      "image_container"
+      "info"
+      "govt_helpline"
+      ;
+      row-gap: 1.8em;
+   }
+   .container .image_container{
+      display: block;
+      margin: auto;
+      grid-area: image_container;
+      max-width: 99%;
+      max-height: 99%;
+      min-width:200px;
+      min-height:200px;
+   }
+   
+
+   .heading h1,.heading h2{
+      align-self: center;
+      justify-self: center;
+   }
+   .heading h1,.heading h2,.heading h1::before,.heading h2::after{
+      font-size: 11.59vw;
+   }
+
+   .info{
+      justify-content: space-between;
+   }
+   .info p{
+      text-align: center;
+      font-size: 13px;
+   }
+   .btn_row{
+      flex-direction: column;
+      padding: 12px 36px;
+      justify-content: space-between;
+   }
+   .btn_row >*{
+      text-align: center;
+   }
+   .search_state{
+      margin-bottom: 2.1em;
+   }
+   .pm_cares{
+      padding: 12px 36px;
+      text-align: center;
+   }
+   .info p,.pm_cares_link{
+      margin-bottom: 1.8em;
+   }
+   .govt_helpline{
+      flex-direction: column-reverse;
+      margin-top: 0;
+      margin-bottom: 18px;
+   }
+   .helpline_number{
+      align-self: center;
+      margin-bottom: 18px;
+   }
+   .helpline_number span{
+      display: block;
+   }
+}
+@media (min-width: 768px) and (max-width: 950px){
+   .btn_row{
+      flex-direction: row;
+   }
+   .info p{
+      margin: 0 auto;
+      max-width: 72%;
+   }
+   .helpline_number{
+      margin-bottom: 2em;
+   }
+   .helpline_number span{
+      display: inline;
+   }
+   .btn_row{
+      justify-content: space-around;
+   }
+   .search_state{
+      margin-bottom: 0;
+   }
+   .search_state,.search_district{
+      padding: 12px 64px;
+
+   }
+   .pm_cares{
+      padding: 12px 84px;
+   }
+   .pm_cares:hover{
+      padding: 12px 108px;
+   }
+}

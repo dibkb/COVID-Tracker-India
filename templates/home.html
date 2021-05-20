@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous"> 
+   <link rel="stylesheet" href="/static/styles/home.css">
+
+   <title>COVID Tracker</title>
+</head>
+<body>
+   <div class="container">
+      <img src="/static/images/corona.png" alt="" class="img_corona">
+      <h1 class="heading">COVID</h1>
+      <div class="info">
+         <p>Morbi purus sit mi libero. Sapien sagittis diam nisl augue egestas consequat, facilisis lorem nulla. Mauris malesuada in ornare commodo blandit ipsum morbi scelerisque.</p>
+         <p>Urna turpis erat cursus sit cum a tristique. In diam sed et sit duis. Proin suspendisse ut facilisis lobortis tempor egestas. Nec in pellentesque diam nibh. A quam sit vel scelerisque egestas vulputate nec duis.</p>
+      </div>
+      <div class="btn_link"><a class="btn_get_started" href="{{ url_for('main') }}">Get Started</a></div>
+      <div class="covid_stats">
+         <div class="covid_boxes">
+            <span>
+               Cases
+            </span>
+            <span>
+               {{ sd.totalIndianCases() }}M
+            </span>
+         </div>
+         <div class="covid_boxes">
+            <span>
+               Deaths
+            </span>
+            <span>
+               {{ sd.totalIndianDeaths() }}K
+            </span>
+         </div>
+         <div class="covid_boxes">
+            <span>
+               Recovered
+            </span>
+            <span>
+               {{ sd.totalIndianRecovered() }}M
+            </span>
+         </div>                  
+      </div>
+      <div class="social">
+         <span>Connect with me</span>
+         <a href="https://www.facebook.com/dibas.kashyap"><i class="fab fa-facebook-f"></i></a>
+         <a href="https://www.instagram.com/dib.kb/?hl=en"><i class="fab fa-instagram"></i></a>   
+      </div>
+      <div class="update_time">Last Updated : {{sd.getUpdateTime()}}, {{sd.getUpdateDate()}}</div>
+   </div>
+   
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+:root{
+   --font: 'Roboto', sans-serif;
+   --red:#DF4547;
+   --background:#1C1C1C;
+   --light-text-color:rgba(225, 225, 225, 0.84);
+   --font-large:4em;
+}
+
+*,*::after,*::before{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   background-color: var(--background);
+   color: white;
+
+   font-weight: 400;
+   font-size: 16px;
+   transition-duration: .21s;
+   transition-timing-function: ease-out;
+}
+
+li,a{
+   text-decoration: none;
+}
+html,body{
+   overflow-x: hidden;
+   height: 100%;
+}
+.container{
+   font-family: var(--font);
+   margin: 6.85714vh 7.2916vw;
+   margin-bottom: 0;
+   height: 93.14286vh;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   column-gap: 1.2em;
+   grid-template-rows: 1fr 2.05594fr 0.88111fr 0.454545fr;
+   grid-template-areas:
+   "heading img_corona"
+   "info img_corona"
+   "btn_link covid_stats"
+   "social update_time" 
+   ;
+}
+.img_corona{
+   grid-area: img_corona;
+   max-width: 99%;
+   max-height: 99%;
+   margin: 0 auto;
+
+   /* animation */
+
+   animation-name: img_load;
+   animation-duration: 2.1s;
+}
+.heading{
+   grid-area: heading;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: center;
+   color: var(--red);
+   font-size: 4em;
+   font-weight: 500;
+
+   /* Animation */
+
+   opacity: 0;
+   animation-name: header_load;
+   animation-duration: 3s;
+   animation-delay: 2.4s;
+   animation-fill-mode: forwards;
+}
+.heading::after{
+   content: "Tracker";
+   color:#FFF;
+   display: inline;
+   font-size: 64px;
+   opacity: 0;
+   animation-name: header_load;
+   animation-duration: 3s;
+   animation-delay: 3s;
+   animation-fill-mode: forwards;
+}
+.info{
+   grid-area: info;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+
+}
+.info >*{
+   line-height: 160.9%;
+   color: var(--light-text-color);
+   font-size: .9em;
+   margin: 3% 0;
+
+   /* animation */
+
+   animation-name: para_load;
+   animation-duration: 0.9s;
+   animation-timing-function: ease-in;
+   animation-delay: .6s;
+   animation-fill-mode: forwards;
+   opacity: 0;
+}
+.info p:nth-child(2){
+
+   /* animation */
+
+   animation-timing-function: ease-out;
+   animation-delay: 2s;
+
+}
+.btn_link{
+   grid-area: btn_link;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+   text-align: center;
+
+   /* animation */
+
+   animation-name: para_load;
+   animation-duration: 0.9s;
+   animation-timing-function: ease-in;
+   animation-delay: .6s;
+   animation-fill-mode: forwards;
+   opacity: 0;
+
+}
+
+.btn_get_started{
+   border: none;
+   background: linear-gradient(92.16deg, #FF4143 21.53%, rgba(255, 118, 60, 0.85) 126.74%);
+   padding: 18px 54px;
+   border-radius: 34px;
+   text-align: center;
+}
+.btn_get_started:hover{
+   cursor: pointer;
+   padding-right: 84px;
+   text-align: center;
+}
+
+.covid_stats{
+   align-self: center;
+   grid-area: covid_stats;
+   display: flex;
+   justify-content: space-between;
+}
+.covid_boxes{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   background: linear-gradient(102.1deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.16) 100%);
+   border: 1.2px solid #FFFFFF;
+   border-radius: 9px;
+   width: 144px;
+   height: 65px
+}
+:nth-child(2).covid_boxes, :nth-child(2).covid_boxes span{
+   border-width: 2.1px;
+   border-color: var(--red);
+   color: var(--red);
+}
+.covid_boxes>*{
+   text-align: center;
+   background-color: transparent;
+
+}
+.social{
+   color: var(--light-text-color);
+   grid-area: social;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: flex-start;
+
+   /* animation */
+
+   animation-name: social_load;
+   animation-duration: 0.9s;
+   animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+   animation-delay: 1.2s;
+   animation-fill-mode: forwards;
+   opacity: 0;
+}
+
+.social>*{
+   color: inherit;
+   font-size: .9em;
+   margin-right: 9%;
+}
+.social i{
+   color: var(--light-text-color);
+   transition: .369s 0.1s ease-in;
+}
+.social i:hover{
+   filter: brightness(118%);
+   transform: scale(1.8) rotate(360deg);
+   
+}
+
+.update_time{
+   grid-area: update_time;
+   color: var(--light-text-color);
+   text-align: center;
+   font-size: .9em;
+
+   /* animation */
+
+   animation-name: img_load;
+   animation-duration: 0.9s;
+}
+.covid_boxes{
+
+   /* animation */
+
+   animation-name: img_load;
+   animation-delay: 1s;
+   animation-duration: 1.2s;
+   opacity: 0;
+   animation-fill-mode: forwards;
+   animation-timing-function: linear;
+}
+:nth-child(1).covid_boxes{
+   animation-delay: 1s;
+}
+:nth-child(2).covid_boxes{
+   animation-delay: 1.6s;
+}
+:nth-child(3).covid_boxes{
+   animation-delay: 2s;
+}
+
+/* Animation */
+
+@keyframes img_load {
+   from{
+      opacity: 0;
+      transform: translate(690px);
+   }
+   to{
+      opacity: 1;
+   }
+}
+
+@keyframes social_load{
+   from{
+      opacity: 0;
+      transform: translate(-690px);
+   }
+   to{
+   opacity: 1;
+   }
+   
+}
+@keyframes para_load{
+   from{
+      opacity: 0;
+      transform: translate(-380px);
+   }
+   to{
+   opacity: 1;
+   }
+}
+@keyframes header_load{
+   from{
+      opacity: 0;
+      transform: translateY(-380px);
+   }
+   to{
+   opacity: 1;
+   }
+}
+/* Media Queries */
+@media (max-width: 767.98px){
+   .container{
+      margin: 6.1vw;
+      min-height: 100vh;
+      height: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 12px;
+      grid-template-rows: 1fr 2.89622fr 0.641509fr 1fr 1.801886fr 0.7547169fr auto;
+      grid-template-areas:
+      "heading "
+      "img_corona"
+      "social"
+      "covid_stats"
+      "info"
+      "btn_link"
+      "update_time" 
+      ;
+   }
+   .img_corona{
+      max-width: 100%;
+      margin: auto;
+   }
+   .heading::after,.heading{
+      font-size: 10.86vw;
+      animation-delay: .9s;
+   }
+   .container>*{
+      justify-content: center;
+      align-items: center;
+   }
+   .info >*{
+      text-align: center;
+   }
+   .btn_get_started:hover{
+      padding: 18px 84px;
+   }
+   .update_time{
+      margin-bottom: 2%;
+   }
+   .covid_stats{
+      justify-content: space-around;
+   }
+   .covid_boxes{
+      max-width: 27%;
+   }
+}
+@media (min-width: 576px) and (max-width: 767.98px){
+   .container{
+   grid-template-rows: 1fr 2.89622fr 0.641509fr 1fr 1.5fr 0.7547169fr auto;
+   }
+   .container >*{
+      max-width: 81%;
+      margin: 0 auto;
+   }
+   .container .social{
+      width: 100%;
+   }
+   .img_corona{
+      max-width: 81%;
+      margin: auto;
+   }
+   
+.btn_get_started{
+   padding: 18px 84px;
+
+}
+.btn_get_started:hover{
+
+   padding: 18px 120px;
+}
+}
+@media (min-width: 768px) and (max-width: 991.98px){
+   .container{
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+   }
+   .img_corona{
+      margin: auto;
+   }
+   .heading,.heading::after{
+      font-size: 52px;
+   }
+   .info >*{
+      line-height: 140%;
+   }
+   .covid_boxes{
+      max-width: 27%;
+   }
+}
+@media (min-width: 992px) and (max-width: 1199.98px){
+   .covid_boxes{
+      max-width: 27%;
+   }
+
+}
+
+
+
