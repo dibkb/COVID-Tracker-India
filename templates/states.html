@@ -16,7 +16,7 @@
 	<body>
 	<section class="ftco-section">
 		<div class="container">
-			<div class="row justify-content-center">
+			<div class="">
 				<div class="text-center mb-5 mt-5">
 					<form class="search_bar" method="POST">
 						<!-- Wrap both input and submit button with a div, set to position: relative.
@@ -28,8 +28,8 @@
 					</form>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12">
+			<div class="">
+				<div class="">
 					<div class="table-wrap">
 						<table class="table table-bordered table-dark table-hover">
 						  <thead>
@@ -45,7 +45,10 @@
 						  <tbody>
 						{% for state in sd.getFinalStatesData() %}	  
 						    <tr>
-						      <td>{{ state['loc'] }}</td>
+						      <td>
+									<a href="{{ url_for('stateDistrict',state = state['loc']) }}" class="state_link">
+								{{ state['loc'] }}</a></td>
+
 						      <td>{{ state['totalConfirmed'] }}</td>
 						      <td>{{ state['active'] }}</td>			
 						      <td class="green">{{ state['discharged'] }}</td>

@@ -263,7 +263,8 @@ html,body{
 }
 @media (max-width: 950px) {
    .container{
-      height: auto;
+      min-height: 600px!important;
+      height: auto!important;
       margin: 0 6vw 2em 7.291vw;
       display: grid;
       grid-template-columns: 1fr;
@@ -282,8 +283,7 @@ html,body{
       grid-area: image_container;
       max-width: 99%;
       max-height: 99%;
-      min-width:200px;
-      min-height:200px;
+
    }
    
 
@@ -314,9 +314,14 @@ html,body{
       margin-bottom: 2.1em;
    }
    .pm_cares{
-      padding: 12px 36px;
+      padding: 12px 27px;
       text-align: center;
    }
+   .pm_cares:hover{
+
+      padding: 12px 42px;
+   }
+
    .info p,.pm_cares_link{
       margin-bottom: 1.8em;
    }

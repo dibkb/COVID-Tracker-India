@@ -77,12 +77,21 @@ input[type="text"]:focus{
    width: 100%;
 
 }
+.state_link{
+   color: rgba(255, 255, 255, 0.9);
+   text-decoration: underline;
+}
+.state_link:hover{
+   color: #fff;
+   filter: brightness(109%);
+   text-decoration: none;
+}
 
 .btn_search{
    z-index: 3;
    position: absolute;
    right:0;
-   padding: 2% 4.5%;
+   padding: 2% 6%;
    margin-right: 9%;
    background-color: #fff;
    border-radius: 34px;
@@ -118,5 +127,19 @@ input[type="text"]:focus{
    }
    to{
    opacity: 1;
+   }
+}
+
+@media (max-width: 950px) {
+   .container{
+      min-height: 600px!important;
+      height: auto!important;
+      margin: 0 1vw 1em 1vw;
+
+   }
+   .search_bar{
+      width: 81vw!important;
+      margin: auto;
+      overflow-x: hidden;
    }
 }
