@@ -66,7 +66,7 @@ html,body{
    opacity: 0;
    animation-name: header_load;
    animation-duration: 2.1s;
-   animation-delay: 2.5s;
+   animation-delay: 1.8s;
    animation-fill-mode: forwards;
 
 }
@@ -79,7 +79,7 @@ html,body{
    opacity: 0;
    animation-name: header_load;
    animation-duration: 2.1s;
-   animation-delay: 1.8s;
+   animation-delay: 2.5s;
    animation-fill-mode: forwards;
 }
 .heading h1::before{
